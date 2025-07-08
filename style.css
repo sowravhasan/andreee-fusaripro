@@ -42,7 +42,7 @@
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
-   bottom: 60px !important;
+   bottom: 50px !important;
 }
 
 .swiper-slide::before {
