@@ -171,4 +171,26 @@ document.addEventListener('DOMContentLoaded', () => {
    initSlider();
    // Start auto-advance
    setInterval(autoAdvance, 5000);
+
+   // Logo swap functionality
+   const logoContainer = document.querySelector('.logo-container');
+   const defaultLogo = document.querySelector('.logo-default');
+   const hoverLogo = document.querySelector('.logo-hover');
+
+   if (logoContainer && defaultLogo && hoverLogo) {
+      // Show default logo initially
+      defaultLogo.style.display = 'block';
+      hoverLogo.style.display = 'none';
+      
+      // Handle hover events
+      logoContainer.addEventListener('mouseenter', () => {
+         defaultLogo.style.display = 'none';
+         hoverLogo.style.display = 'block';
+      });
+
+      logoContainer.addEventListener('mouseleave', () => {
+         defaultLogo.style.display = 'block';
+         hoverLogo.style.display = 'none';
+      });
+   }
 });
