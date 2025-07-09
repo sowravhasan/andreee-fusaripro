@@ -1,3 +1,46 @@
+@font-face {
+   font-family: 'FuturaStd';
+   src: url('/font/FuturaStdLight.otf') format('opentype');
+   font-weight: 300;
+   /* Light */
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'FuturaStd';
+   src: url('/font/FuturaStdMedium.otf') format('opentype');
+   font-weight: 500;
+   /* Medium */
+   font-style: normal;
+}
+/* Optional: if you have bold */
+@font-face {
+   font-family: 'FuturaStd';
+   src: url('/font/FuturaStdBold.otf') format('opentype');
+   font-weight: 700;
+   /* Bold */
+   font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: 'FuturaStd';
+}
+
+p,
+span,
+a,
+button,
+input,
+textarea,
+label {
+   font-family: 'FuturaStd';
+}
+
 .myContainer {
    max-width: 1000px;
    margin: 0 auto;
@@ -101,6 +144,7 @@
    background-position: center;
    background-repeat: no-repeat;
 }
+
 /* Slider Styles */
 .slider-container {
    position: relative;
