@@ -79,3 +79,10 @@
 }
 
 }
+
+.about-hero {
+   background-image: url('/images/hero about.avif');
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+}

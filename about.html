@@ -1,0 +1,135 @@
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>About Fusari Pro</title>
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+   <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+   <!-- navbar -->
+   <nav class="bg-white border-b border-gray-200 px-4 py-3 h-[80px] md:h-[125px]">
+      <div class="flex items-center justify-between myContainer h-full">
+         <!-- Menu Button -->
+         <button id="menuBtn"
+            class="flex cursor-pointer items-center space-x-2 text-gray-800 hover:text-gray-600 transition-colors">
+            <div class="md:hidden">
+               <div class="flex flex-col space-y-1">
+                  <div class="w-6 h-0.5 bg-gray-800"></div>
+                  <div class="w-6 h-0.5 bg-gray-800"></div>
+                  <div class="w-6 h-0.5 bg-gray-800"></div>
+               </div>
+            </div>
+            <span class="hidden md:block text-xl tracking-wide">MENU</span>
+            <div class="hidden md:flex flex-col space-y-1">
+               <div class="w-6 h-0.5 bg-gray-800"></div>
+               <div class="w-6 h-0.5 bg-gray-800"></div>
+               <div class="w-6 h-0.5 bg-gray-800"></div>
+            </div>
+         </button>
+
+         <!-- Logo -->
+         <div class="flex items-center space-x-2">
+            <img src="images/logo.avif" alt="logo" class="h-8 md:h-12">
+         </div>
+
+         <!-- Language Selector - Hidden on Mobile -->
+         <div
+            class="hidden md:flex items-center space-x-1 border border-gray-300 px-3 py-1 hover:bg-gray-50 cursor-pointer">
+            <span class="text-base font-medium text-gray-800">EN</span>
+            <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+         </div>
+      </div>
+   </nav>
+
+   <!-- Sidebar -->
+   <div id="sidebar"
+      class="fixed top-0 left-0 h-full w-[75%] md:w-[550px] bg-white shadow-xl transform -translate-x-full transition-transform duration-500 ease-in-out z-50">
+      <div class="p-6 md:p-12">
+         <div class="flex justify-between items-center mb-16">
+            <!-- Close Button -->
+            <button id="closeBtn" class="text-gray-800 hover:text-gray-600">
+               <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12"></path>
+               </svg>
+            </button>
+
+            <!-- Language Selector - Shown only on Mobile -->
+            <div class="md:hidden flex items-center space-x-1 border border-gray-300 px-3 py-1">
+               <span class="text-base font-medium text-gray-800">EN</span>
+               <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+               </svg>
+            </div>
+         </div>
+
+         <div class="flex items-center">
+            <nav class="space-y-8 mt-12">
+               <a href="#" class="block text-gray-800 text-2xl transition-colors">Home</a>
+               <a href="#" class="block text-gray-800 text-2xl transition-colors">About Fusari Pro</a>
+               <a href="#" class="block text-gray-800 text-2xl transition-colors">Our Products</a>
+               <a href="#" class="block text-gray-800 text-2xl transition-colors">Become a Distributor</a>
+               <a href="#" class="block text-gray-800 text-2xl transition-colors">Contact Us</a>
+            </nav>
+         </div>
+      </div>
+   </div>
+
+
+
+   <!-- hero section -->
+   <section class="relative  h-auto lg:h-[calc(100vh-80px)] md:h-[calc(100vh-125px)] flex items-center justify-center bg-cover bg-center bg-no-repeat about-hero">
+
+      <!-- Content Container -->
+      <div class="relative z-10 max-w-[630px] mx-auto px-4 py-10">
+         <div class="bg-[#ffffffb5] p-8 md:p-12 lg:p-10 rounded-lg  text-center">
+            <!-- Main Heading -->
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-medium text-gray-900 mb-8 tracking-wide">
+               OUR VISION
+            </h1>
+
+            <!-- Vision Statement -->
+            <p class="text-lg md:text-base leading-relaxed mb-4 max-w-3xl">
+               At Fusari Pro, our vision is to be a leading supplier, showcasing our expertise in managing high-end
+               manufacturing—from bespoke craftsmanship and small collections to larger batch production.
+            </p>
+
+            <!-- Products Section -->
+            <div class="mb-8">
+               <h2 class="text-2xl font-semibold text-gray-900 mb-2">Our Products offer:</h2>
+               <p class="text-lg text-[#323232]leading-relaxed">
+                  <strong>Suiting, Casual-wear, Outwear, Cashmere sweaters, Shirting, Jeans & Chinos, Sneakers, Leather
+                     shoes, Leathers bag, Accessories</strong>
+               </p>
+            </div>
+
+            <!-- Services Description -->
+            <p class=" text-[#323232]leading-relaxed mb-3">
+               We offer Made-to-Measure (MTM) OEM services, providing tailored solutions for our clients at every stage
+               of the process: design, sourcing, product development, production, and logistics.
+            </p>
+
+            <!-- Brand Heritage -->
+            <p class=" text-[#323232]leading-relaxed mb-10">
+               Under our core brand, Atelier Fusari, we have proudly demonstrated our commitment to quality and
+               precision over the past 15 years, successfully dressing the elite of both Shanghai and abroad since 2011.
+            </p>
+
+            <!-- CTA Button -->
+            <button
+               class="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-2 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+               Book An Online Meeting Now
+            </button>
+         </div>
+      </div>
+   </section>
+
+   <script src="script.js"></script>
+</body>
+
+</html>
