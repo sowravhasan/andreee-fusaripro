@@ -81,7 +81,7 @@
    </div>
 
    <!-- Header -->
-   <div class="relative w-full h-[550px]">
+   <section class="relative w-full h-[550px]">
       <!-- Slider container -->
       <div class="slider-container relative w-full h-full overflow-hidden">
          <!-- Slides -->
@@ -147,27 +147,66 @@
          </div>
 
          <!-- Navigation Arrows -->
-         <button class="absolute hidden md:block  left-20 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-all z-10" onclick="moveSlide(-1)">
+         <button
+            class="absolute hidden md:block  left-20 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-all z-10"
+            onclick="moveSlide(-1)">
             <svg class="w-15 h-15" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19l-7-7 7-7"></path>
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19l-7-7 7-7"></path>
             </svg>
          </button>
-         <button class="absolute hidden md:block right-20 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-all z-10" onclick="moveSlide(1)">
+         <button
+            class="absolute hidden md:block right-20 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-all z-10"
+            onclick="moveSlide(1)">
             <svg class="w-15 h-15" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7"></path>
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7"></path>
             </svg>
          </button>
 
          <!-- Dots -->
          <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
-            <button class="w-1.5 h-1.5 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all dot active" onclick="currentSlide(0)"></button>
-            <button class="w-1.5 h-1.5 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all dot" onclick="currentSlide(1)"></button>
-            <button class="w-1.5 h-1.5 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all dot" onclick="currentSlide(2)"></button>
+            <button
+               class="w-1.5 h-1.5 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all dot active"
+               onclick="currentSlide(0)"></button>
+            <button class="w-1.5 h-1.5 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all dot"
+               onclick="currentSlide(1)"></button>
+            <button class="w-1.5 h-1.5 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all dot"
+               onclick="currentSlide(2)"></button>
          </div>
       </div>
-   </div>
+   </section>
 
+   <!-- Discover Our Offering Section -->
+   <section class="myContainer">
+      <h2 class="text-left md:text-[38px] text-[28px] mb-6 mt-6 md:mt-20">Discover Our Offering</h2>
 
+      <p class="text-base  md:text-[15px] mb-4">We are here to help brands creator & tailor stores, to bring your designed products to
+         your clients.</p>
+
+      <p class="text-base  md:text-[15px] font-medium">We offer 10 categories of customizable products :</p>
+      <p class="text-base  md:text-[15px] mb-6 font-medium">Suiting, Casual-wear, Outwear, Cashmere Sweaters, Shirting, Jeans & Chinos, Sneakers,
+         Leather shoes, Leather Bags, Accessories</p>
+      <p class="text-base  md:text-[15px] mb-6">We offer full support in every steps including technical assistance, product
+         development, quality control, logistic, to help you succeed in your local market.</p>
+
+      <h2 class="text-left md:text-[38px] text-[28px] mb-4">More In Detail:</h2>
+
+      <ul class="space-y-2 list-disc list-inside text-left mb-6 md:mb-20 text-base  md:text-[15px]">
+         <li class=" leading-tight">24/7 Assistance: Our team is always available to provide round-the-clock support,
+            ensuring that any issues are promptly resolved.</li>
+            <li class=" leading-tight">Quick Delivery: Receive your customized garments delivered directly to your door within
+            just 2-3 weeks for a hassle-free experience.</li>
+         <li class=" leading-tight">Exceptional Quality at Affordable Prices: We deliver outstanding craftsmanship without
+            the premium price tag, giving you remarkable value.</li>
+         <li class=" leading-tight">Diverse Product Range: Choose from a wide variety of products that include the latest
+            seasonal trends, tailored to meet various customer preferences.</li>
+         <li class=" leading-tight">Effortless Management System: Our intuitive system simplifies the management of your
+            activities, helping you stay organized and efficient.</li>
+         <li class=" leading-tight">15 Years of Experience: Leverage our extensive expertise in the industry, providing you
+            with dependable and knowledgeable guidance throughout our collaboration.</li>
+      </ul>
+   </section>
+
+   <!-- footer -->
    <footer class="w-full h-[75px] border-t">
       <div class="myContainer w-full h-full flex items-center justify-between flex-wrap">
          <div class="text-left md:flex block">
