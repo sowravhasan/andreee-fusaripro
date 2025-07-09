@@ -86,3 +86,10 @@
    background-position: center;
    background-repeat: no-repeat;
 }
+
+.our-products-hero {
+   background-image: url('/images/product/product-header.avif');
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+}

@@ -2,6 +2,75 @@ const menuBtn = document.getElementById('menuBtn');
 const sidebar = document.getElementById('sidebar');
 const closeBtn = document.getElementById('closeBtn');
 
+// Products data
+const products = [
+   { name: "The Notch - Dark Blue", image: "/images/product/asset 4.png" },
+   { name: "The Notch - Burgundy with Plaids", image: "/images/product/asset 5.png" },
+   { name: "The Notch - Light Grey", image: "/images/product/asset 6.png" },
+   { name: "The Double Breasted Trench - Beige", image: "/images/product/asset 7.png" },
+   { name: "The Notch Coat - Grey Cachemire", image: "/images/product/asset 8.png" },
+   { name: "The Classic Trench - Dark Blue", image: "/images/product/asset 9.png" },
+   { name: "The Winter Vest - Dark blue", image: "/images/product/asset 10.png" },
+   { name: "The Cardigan with Buttons - Pale Light Blue", image: "/images/product/asset 11.png" },
+   { name: "The Zipper Sweater - Red with White Zipper", image: "/images/product/asset 12.png" },
+   { name: "The Round Neck Casual Sweater - Light Blue", image: "/images/product/asset 13.png" },
+   { name: "The Round Neck Sweater - Pale Yellow", image: "/images/product/asset 14.png" },
+   { name: "The V Neck Sweater - Wine", image: "/images/product/asset 15.png" },
+   { name: "The Band Roll - Black", image: "/images/product/asset 16.png" },
+   { name: "The Tux - White", image: "/images/product/asset 17.png" },
+   { name: "The Mao - Beige", image: "/images/product/asset 18.png" },
+   { name: "The Cotton T-Shirts - Dark Blue", image: "/images/product/asset 19.png" },
+   { name: "The 200s Polo - Light Blue", image: "/images/product/asset 20.png" },
+   { name: "The TeeS O Neck - Black", image: "/images/product/asset 21.png" },
+   { name: "The Jeans - Washed Middle Blue", image: "/images/product/asset 22.png" },
+   { name: "The Jeans - Washed Light Blue", image: "/images/product/asset 23.png" },
+   { name: "The Jeans - Full White", image: "/images/product/asset 24.png" },
+   { name: "The Sneaker with Straps - Brown", image: "/images/product/asset 25.png" },
+   { name: "The Sneaker with Straps - Black", image: "/images/product/asset 26.png" },
+   { name: "The Sneaker with Laces - Dark Blue", image: "/images/product/asset 27.png" },
+   { name: "The Boots Pointed - Black Patina", image: "/images/product/asset 28.png" },
+   { name: "The Tassel Loafer - Brown braid / black piping", image: "/images/product/asset 29.png" },
+   { name: "The One Cut Pointed - Brown Patina", image: "/images/product/asset 30.png" },
+   { name: "The Francesco Guccini Pocket Square", image: "/images/product/asset 31.png" },
+   { name: "The Suspender - Red and Dark Brown Leather", image: "/images/product/asset 32.png" },
+   { name: "The Belt with the Logo - Red", image: "/images/product/asset 33.png" },
+   { name: "The Bicolor Scarf - Dark Blue", image: "/images/product/asset 34.png" },
+   { name: "The Colorful Socks - Blue", image: "/images/product/asset 35.png" },
+   { name: "The Milan - Sunset", image: "/images/product/asset 36.png" }
+];
+
+// Function to render products grid
+function renderProductsGrid(showAll = false) {
+   const productsGrid = document.getElementById('products-grid');
+   const loadMoreContainer = document.getElementById('load-more-container');
+   
+   if (productsGrid) {
+      // Show either all products or just the first 6
+      const displayProducts = showAll ? products : products.slice(0, 6);
+      
+      productsGrid.innerHTML = displayProducts.map(product => `
+         <div class="group cursor-pointer">
+            <div class="aspect-square overflow-hidden mb-4">
+               <img 
+                  src="${product.image}" 
+                  alt="${product.name}"
+                  class="w-full h-full object-cover object-center"
+                  loading="lazy"
+               />
+            </div>
+            <h3 class="text-center text-[#2D2E2C] text-lg leading-tight px-2">
+               ${product.name}
+            </h3>
+         </div>
+      `).join('');
+
+      // Hide load more button container if showing all products
+      if (loadMoreContainer) {
+         loadMoreContainer.style.display = showAll ? 'none' : 'block';
+      }
+   }
+}
+
 function openSidebar() {
    sidebar.classList.remove('-translate-x-full');
    document.body.style.overflow = 'hidden';
@@ -19,5 +88,18 @@ closeBtn.addEventListener('click', closeSidebar);
 document.addEventListener('keydown', function(e) {
    if (e.key === 'Escape') {
       closeSidebar();
+   }
+});
+
+// Initialize products grid when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+   renderProductsGrid(false); // Initially show only 6 products
+   
+   // Add click handler for load more button
+   const loadMoreBtn = document.getElementById('load-more-btn');
+   if (loadMoreBtn) {
+      loadMoreBtn.addEventListener('click', () => {
+         renderProductsGrid(true); // Show all products when clicked
+      });
    }
 });

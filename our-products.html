@@ -1,0 +1,182 @@
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Our Products</title>
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+   <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+   <!-- navbar -->
+   <nav class="bg-white border-b border-gray-200 px-4 py-3 h-[80px] md:h-[125px]">
+      <div class="flex items-center justify-between myContainer h-full">
+         <!-- Menu Button -->
+         <button id="menuBtn"
+            class="flex cursor-pointer items-center space-x-2 text-gray-800 hover:text-gray-600 transition-colors">
+            <div class="md:hidden">
+               <div class="flex flex-col space-y-1">
+                  <div class="w-6 h-0.5 bg-gray-800"></div>
+                  <div class="w-6 h-0.5 bg-gray-800"></div>
+                  <div class="w-6 h-0.5 bg-gray-800"></div>
+               </div>
+            </div>
+            <span class="hidden md:block text-xl tracking-wide">MENU</span>
+            <div class="hidden md:flex flex-col space-y-1">
+               <div class="w-6 h-0.5 bg-gray-800"></div>
+               <div class="w-6 h-0.5 bg-gray-800"></div>
+               <div class="w-6 h-0.5 bg-gray-800"></div>
+            </div>
+         </button>
+
+         <!-- Logo -->
+         <div class="flex items-center space-x-2">
+            <img src="images/logo.avif" alt="logo" class="h-8 md:h-12">
+         </div>
+
+         <!-- Language Selector - Hidden on Mobile -->
+         <div
+            class="hidden md:flex items-center space-x-1 border border-gray-300 px-3 py-1 hover:bg-gray-50 cursor-pointer">
+            <span class="text-base font-medium text-gray-800">EN</span>
+            <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+         </div>
+      </div>
+   </nav>
+
+   <!-- Sidebar -->
+   <div id="sidebar"
+      class="fixed top-0 left-0 h-full w-[75%] md:w-[550px] bg-white shadow-xl transform -translate-x-full transition-transform duration-500 ease-in-out z-50">
+      <div class="p-6 md:p-12">
+         <div class="flex justify-between items-center mb-16">
+            <!-- Close Button -->
+            <button id="closeBtn" class="text-gray-800 hover:text-gray-600">
+               <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12"></path>
+               </svg>
+            </button>
+
+            <!-- Language Selector - Shown only on Mobile -->
+            <div class="md:hidden flex items-center space-x-1 border border-gray-300 px-3 py-1">
+               <span class="text-base font-medium text-gray-800">EN</span>
+               <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+               </svg>
+            </div>
+         </div>
+
+         <div class="flex items-center">
+            <nav class="space-y-8 mt-12">
+               <a href="#" class="block text-gray-800 text-2xl transition-colors">Home</a>
+               <a href="#" class="block text-gray-800 text-2xl transition-colors">About Fusari Pro</a>
+               <a href="#" class="block text-gray-800 text-2xl transition-colors">Our Products</a>
+               <a href="#" class="block text-gray-800 text-2xl transition-colors">Become a Distributor</a>
+               <a href="#" class="block text-gray-800 text-2xl transition-colors">Contact Us</a>
+            </nav>
+         </div>
+      </div>
+   </div>
+
+
+
+   <!-- hero section -->
+   <section
+      class="relative h-auto lg:h-[450px] md:h-[calc(100vh-125px)] flex items-center justify-center bg-cover bg-center bg-no-repeat our-products-hero">
+
+      <!-- Content Container -->
+      <div class="relative z-10 max-w-[630px] mx-auto px-4 py-28 md:py-10">
+         <div class="bg-[#ffffffb5] p-8 md:p-12 lg:px-18 lg:py-10 text-center">
+            <!-- Main Heading -->
+            <h1 class="text-4xl md:text-5xl lg:text-[56px] text-gray-900 mb-8 tracking-wide">
+               OUR PRODUCTS
+            </h1>
+
+            <!-- Vision Statement -->
+            <p class="text-lg leading-relaxed mb-4 max-w-3xl">
+               Want to see the full catalog? <br>
+               Here below you can get the PDF version.
+            </p>
+            <!-- CTA Button -->
+            <button
+               class="bg-red-600 hover:bg-white hover:text-gray-400 border-1 border-red-600 hover:border-gray-400 mt-5   text-white font-semibold px-12 py-2 transition-colors duration-300">
+               PDF Download
+            </button>
+         </div>
+      </div>
+   </section>
+
+   <!-- Products Grid Section -->
+   <section class="pt-16 pb-5 px-4">
+      <div class="max-w-[720px] mx-auto relative">
+         <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+            <!-- Products will be dynamically inserted here -->
+         </div>
+
+         <!-- Load More Button -->
+         <div id="load-more-container" class="w-full bg-white py-16 text-center absolute bottom-[-15px] left-0 z-10">
+            <button id="load-more-btn"
+               class="border border-red-600 text-red-600 hover:bg-red-600 hover:text-white px-12 py-2 transition-colors duration-300">
+               Load More
+            </button>
+         </div>
+      </div>
+   </section>
+
+   <!-- Textiles Section -->
+   <section class="bg-[#D62828] py-20 px-4 overflow-hidden">
+      <div class="myContainer text-white">
+         <h2 class="text-3xl md:text-4xl mb-8 text-center md:text-left">The Textiles that We Use</h2>
+
+         <p class="text-lg mb-16 max-w-[800px] leading-relaxed text-center md:text-left">
+            We take pride in offering OEM products assembled in China at factories adhering to the highest quality
+            standards.
+            While our production is efficient and precise, we ensure that the final product reflects exceptional
+            craftsmanship by using textiles from world-renowned suppliers such as Vitale Barberis Canonico, Dormeuil,
+            Guabello, Loro Piana, and Cerruti.
+         </p>
+
+         <!-- Logo Grid -->
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center justify-items-center">
+            <!-- First Row -->
+            <img src="./images/product/asset 37.png" alt="Vitale Barberis Canonico" class="w-[260px]">
+            <img src="./images/product/asset 38.png" alt="Guabello" class="w-[260px]">
+            <img src="./images/product/asset 39.png" alt="Dormeuil" class="w-[260px]">
+            <!-- Second Row -->
+
+            <!-- hidden on mobile -->
+            <div class="col-span-1 md:col-span-3 flex justify-center gap-12 hidden md:flex">
+               <img src="./images/product/asset 40.png" alt="Cerruti" class="w-[260px]">
+               <img src="./images/product/asset 41.png" alt="Loro Piana" class="w-[260px]">
+            </div>
+
+            <!-- show on mobile -->
+            <div class="flex flex-col md:hidden justify-center items-center gap-12">
+               <img src="./images/product/asset 40.png" alt="Cerruti" class="w-[260px]">
+               <img src="./images/product/asset 41.png" alt="Loro Piana" class="w-[260px]">
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- footer -->
+   <footer class="w-full h-[75px] border-t">
+      <div class="myContainer w-full h-full flex items-center justify-between flex-wrap">
+         <div class="text-left md:flex block">
+            <p class="text-[16px] md:text-[12px] my-5 md:my-0">© 2014 Atelier Fusari, all right reserved</p>
+            <a class="md:ml-10 ml-0 text-[16px] md:text-[12px] underline text-left "
+               href="https://www.fusaripro.com/privacy-policy">Privacy Policy</a>
+         </div>
+
+         <div class="pb-20 md:pb-0 mt-5 lg:mt-0">
+            <img class="w-[210px]" src="./images/logo.avif" alt="">
+         </div>
+      </div>
+   </footer>
+
+   <script src="script.js"></script>
+</body>
+
+</html>
