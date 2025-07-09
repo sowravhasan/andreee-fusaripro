@@ -95,6 +95,12 @@
    background-repeat: no-repeat;
 }
 
+.contact-us-hero {
+   background-image: url('/images/contact-header.avif');
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+}
 /* Slider Styles */
 .slider-container {
    position: relative;
