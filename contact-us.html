@@ -40,12 +40,19 @@
          </div>
 
          <!-- Language Selector - Hidden on Mobile -->
-         <div
-            class="hidden md:flex items-center space-x-1 border border-gray-300 px-3 py-1 hover:bg-gray-50 cursor-pointer">
-            <span class="text-base font-medium text-gray-800">EN</span>
-            <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
+         <div class="relative">
+            <div class="hidden md:flex items-center space-x-1 border border-gray-300 px-3 py-1 hover:bg-gray-50 cursor-pointer language-selector">
+               <span class="text-base font-medium text-gray-800">EN</span>
+               <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+               </svg>
+            </div>
+            <div class="language-dropdown hidden absolute top-full right-0 mt-1 w-20 bg-white border border-gray-200 rounded shadow-lg">
+               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">EN</a>
+               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">FR</a>
+               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">IT</a>
+               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">RU</a>
+            </div>
          </div>
       </div>
    </nav>

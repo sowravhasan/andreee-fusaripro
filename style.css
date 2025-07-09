@@ -150,3 +150,12 @@
 .slider-container button:hover {
    background-color: rgba(255, 255, 255, 0.5);
 }
+
+/* Language Selector Styles */
+.language-dropdown {
+   z-index: 1000;
+}
+
+.language-dropdown a {
+   transition: background-color 0.2s ease;
+}

@@ -194,3 +194,27 @@ document.addEventListener('DOMContentLoaded', () => {
       });
    }
 });
+
+// Language Selector
+document.addEventListener('DOMContentLoaded', function() {
+    const languageSelector = document.querySelector('.language-selector');
+    const languageDropdown = document.querySelector('.language-dropdown');
+    
+    // Toggle dropdown on click
+    languageSelector?.addEventListener('click', function(e) {
+        e.stopPropagation();
+        languageDropdown.classList.toggle('hidden');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function() {
+        if (!languageDropdown?.classList.contains('hidden')) {
+            languageDropdown.classList.add('hidden');
+        }
+    });
+
+    // Prevent dropdown from closing when clicking inside it
+    languageDropdown?.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+});
