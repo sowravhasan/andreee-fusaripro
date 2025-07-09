@@ -43,11 +43,11 @@ const products = [
 function renderProductsGrid(showAll = false) {
    const productsGrid = document.getElementById('products-grid');
    const loadMoreContainer = document.getElementById('load-more-container');
-   
+
    if (productsGrid) {
       // Show either all products or just the first 6
       const displayProducts = showAll ? products : products.slice(0, 6);
-      
+
       productsGrid.innerHTML = displayProducts.map(product => `
          <div class="group cursor-pointer">
             <div class="aspect-square overflow-hidden mb-4">
@@ -85,16 +85,16 @@ menuBtn.addEventListener('click', openSidebar);
 closeBtn.addEventListener('click', closeSidebar);
 
 // Close sidebar on escape key
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
    if (e.key === 'Escape') {
       closeSidebar();
    }
 });
 
 // Initialize products grid when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
    renderProductsGrid(false); // Initially show only 6 products
-   
+
    // Add click handler for load more button
    const loadMoreBtn = document.getElementById('load-more-btn');
    if (loadMoreBtn) {
@@ -102,4 +102,73 @@ document.addEventListener('DOMContentLoaded', function() {
          renderProductsGrid(true); // Show all products when clicked
       });
    }
+});
+
+// Slider functionality
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+
+// Initialize the slider
+function initSlider() {
+   if (!slides.length) return;
+
+   // Hide all slides except the first one
+   slides[0].style.opacity = '1';
+   slides[0].style.zIndex = '1';
+   for (let i = 1; i < slides.length; i++) {
+      slides[i].style.opacity = '0';
+      slides[i].style.zIndex = '0';
+   }
+}
+
+// Move to a specific slide
+function currentSlide(n) {
+   showSlide(n);
+}
+
+// Navigate between slides
+function moveSlide(direction) {
+   showSlide(currentSlideIndex + direction);
+}
+
+// Show the specified slide
+function showSlide(n) {
+   if (!slides.length) return;
+
+   // Handle wrap-around
+   if (n >= slides.length) n = 0;
+   if (n < 0) n = slides.length - 1;
+
+   // Update current slide index
+   const previousIndex = currentSlideIndex;
+   currentSlideIndex = n;
+
+   // Update dots
+   dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentSlideIndex);
+      dot.style.opacity = index === currentSlideIndex ? '1' : '0.5';
+   });
+
+   // Fade out previous slide
+   slides[previousIndex].style.transition = 'opacity 0.5s ease-in-out, z-index 0.5s step-end';
+   slides[previousIndex].style.opacity = '0';
+   slides[previousIndex].style.zIndex = '0';
+
+   // Fade in new slide
+   slides[currentSlideIndex].style.transition = 'opacity 0.5s ease-in-out, z-index 0.5s step-start';
+   slides[currentSlideIndex].style.opacity = '1';
+   slides[currentSlideIndex].style.zIndex = '1';
+}
+
+// Auto-advance slides every 5 seconds
+function autoAdvance() {
+   moveSlide(1);
+}
+
+// Initialize slider when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+   initSlider();
+   // Start auto-advance
+   setInterval(autoAdvance, 5000);
 });
