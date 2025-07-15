@@ -1,23 +1,24 @@
 @font-face {
-   font-family: 'FuturaStd';
+   font-family: 'FuturaStdLight';
    src: url('/font/FuturaStdLight.otf') format('opentype');
-   font-weight: 300;
+
    /* Light */
    font-style: normal;
 }
 
 @font-face {
-   font-family: 'FuturaStd';
+   font-family: 'FuturaStdMedium';
    src: url('/font/FuturaStdMedium.otf') format('opentype');
-   font-weight: 500;
+ 
    /* Medium */
    font-style: normal;
 }
+
 /* Optional: if you have bold */
 @font-face {
    font-family: 'FuturaStd';
    src: url('/font/FuturaStdBold.otf') format('opentype');
-   font-weight: 700;
+ 
    /* Bold */
    font-style: normal;
 }
@@ -28,17 +29,23 @@ h3,
 h4,
 h5,
 h6 {
-   font-family: 'FuturaStd';
+   font-family: 'FuturaStdMedium';
 }
-
+.font-medium-custom {
+   font-weight: 500 !important;
+   font-family: 'FuturaStdMedium' !important;
+}
+.font-normal-custom {
+   font-weight: 400 !important;
+   font-family: 'FuturaStdLight' !important;
+}
 p,
 span,
-a,
 button,
 input,
 textarea,
 label {
-   font-family: 'FuturaStd';
+   font-family: 'FuturaStdLight';
 }
 
 .myContainer {
@@ -202,4 +209,10 @@ label {
 
 .language-dropdown a {
    transition: background-color 0.2s ease;
+}
+
+nav {
+   position: sticky;
+   top: 0;
+   z-index: 20;
 }

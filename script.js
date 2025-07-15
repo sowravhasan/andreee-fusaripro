@@ -58,7 +58,7 @@ function renderProductsGrid(showAll = false) {
                   loading="lazy"
                />
             </div>
-            <h3 class="text-center text-[#2D2E2C] text-lg leading-tight px-2">
+            <h3 class="text-center text-[#2D2E2C] text-lg leading-tight font-medium-custom tracking-[0.5px]">
                ${product.name}
             </h3>
          </div>
