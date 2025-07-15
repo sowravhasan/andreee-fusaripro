@@ -1,0 +1,450 @@
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" type="image/x-icon" href="images/favicon.png">
+   <title>Contact Us</title>
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+   <link rel="stylesheet" href="style.css">
+   <style>
+      /* Custom checkbox and radio styling */
+      input[type="checkbox"],
+      input[type="radio"] {
+         width: 18px;
+         height: 18px;
+         margin-right: 10px;
+         accent-color: #000;
+         cursor: pointer;
+         outline: none !important;
+         border: none !important;
+      }
+
+      /* Style for labels */
+      .option-label {
+         display: flex;
+         align-items: center;
+         margin-bottom: 12px;
+         cursor: pointer;
+         font-size: 15px;
+         color: #000;
+      }
+
+      /* Required field indicator */
+      .required-field::after {
+         content: " *";
+         color: #000;
+      }
+   </style>
+
+</head>
+
+<body>
+   <!-- navbar -->
+   <nav class="bg-white border-b border-gray-200 px-4 py-3 h-[80px] md:h-[125px]">
+      <div class="flex items-center justify-between myContainer h-full">
+         <!-- Menu Button -->
+         <button id="menuBtn"
+            class="flex cursor-pointer items-center space-x-2 text-gray-800 hover:text-gray-600 transition-colors">
+            <div class="md:hidden">
+               <div class="flex flex-col space-y-1">
+                  <div class="w-6 h-0.5 bg-gray-800"></div>
+                  <div class="w-6 h-0.5 bg-gray-800"></div>
+                  <div class="w-6 h-0.5 bg-gray-800"></div>
+               </div>
+            </div>
+            <span class="hidden md:block text-xl tracking-wide">MENU</span>
+            <div class="hidden md:flex flex-col space-y-1">
+               <div class="w-6 h-0.5 bg-gray-800"></div>
+               <div class="w-6 h-0.5 bg-gray-800"></div>
+               <div class="w-6 h-0.5 bg-gray-800"></div>
+            </div>
+         </button>
+
+         <!-- Logo -->
+         <div class="flex items-center justify-center space-x-2">
+            <a href="/" class="logo-container flex items-center justify-center">
+               <img src="images/logo.avif" alt="logo" class="h-8 md:h-12 logo-default">
+               <img src="images/logo2.avif" alt="logo" class="h-8 md:h-12 logo-hover">
+            </a>
+         </div>
+
+         <!-- Language Selector - Hidden on Mobile -->
+         <div class="relative">
+            <div
+               class="hidden md:flex items-center space-x-1 border border-gray-300 px-3 py-1 hover:bg-gray-50 cursor-pointer language-selector">
+               <span class="text-base font-medium text-gray-800">EN</span>
+               <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+               </svg>
+            </div>
+            <div
+               class="language-dropdown hidden absolute top-full right-0 mt-1 w-20 bg-white border border-gray-200 rounded shadow-lg">
+               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">EN</a>
+               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">FR</a>
+               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">IT</a>
+               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">RU</a>
+            </div>
+         </div>
+      </div>
+   </nav>
+
+   <!-- Sidebar -->
+   <div id="sidebar"
+      class="fixed top-0 left-0 h-full w-[75%] md:w-[550px] bg-white shadow-xl transform -translate-x-full transition-transform duration-500 ease-in-out z-50">
+      <div class="p-6 md:p-12">
+         <div class="flex justify-between items-center mb-16">
+            <!-- Close Button -->
+            <button id="closeBtn" class="text-gray-800 hover:text-gray-600">
+               <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12"></path>
+               </svg>
+            </button>
+
+            <!-- Language Selector - Shown only on Mobile -->
+            <div class="md:hidden flex items-center space-x-1 border border-gray-300 px-3 py-1">
+               <span class="text-base font-medium text-gray-800">EN</span>
+               <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+               </svg>
+            </div>
+         </div>
+
+         <div class="flex items-center">
+            <nav class="space-y-8 mt-12">
+               <a href="./" class="block text-gray-800 text-2xl transition-colors">Home</a>
+               <a href="about-fusari-pro.html" class="block text-gray-800 text-2xl transition-colors">About Fusari
+                  Pro</a>
+               <a href="our-products.html" class="block text-gray-800 text-2xl transition-colors">Our Products</a>
+               <a href="become-a-distributor.html" class="block text-gray-800 text-2xl transition-colors">Become a
+                  Distributor</a>
+               <a href="contact-us.html" class="block text-gray-800 text-2xl transition-colors">Contact Us</a>
+            </nav>
+         </div>
+      </div>
+   </div>
+
+   <!-- hero section -->
+   <section class="min-h-screen formBg pt-[40px]">
+      <form action="" class="max-w-[600px] mx-auto bg-[#F0EAE0] p-6">
+         <h1 class="font-medium-custom underline mb-5">Business Overview</h1>
+         <label class="block text-[15px]" for="store_name">What is the name of your tailor store?</label>
+         <input class="bg-[#E8EFF5] w-full p-2 mt-1 focus:outline-none" type="text" id="store_name" name="store_name"
+            required>
+
+         <label class="block text-[15px] mt-4" for="store_location">Where is your store located?</label>
+         <input class="bg-[#E8EFF5] w-full p-2 mt-1 focus:outline-none" type="text" id="store_location"
+            name="store_location" required>
+
+         <label class="block text-[15px] mt-4" for="email">Enter an email address like example@mysite.com.</label>
+         <input class="bg-[#E8EFF5] w-full p-2 mt-1 focus:outline-none" type="email" id="email" name="email" required>
+
+         <label class="block text-[15px] mt-4" for="specialization">Do you specialize in any particular type of
+            tailoring?</label>
+         <input class="bg-[#E8EFF5] w-full p-2 mt-1 focus:outline-none" type="text" id="specialization"
+            name="specialization" required>
+
+         <label class="block text-[15px] mt-4" for="target_clientele">Who is your target clientele?</label>
+         <select class="bg-[#E8EFF5] w-full p-2 mt-1 focus:outline-none" id="target_clientele" name="target_clientele"
+            required>
+            <option value="">Select an option</option>
+            <option value="Bespoke">Bespoke</option>
+            <option value="Made to measure">Made to measure</option>
+            <option value="Ready to wear">Ready to wear</option>
+            <option value="Mix">Mix</option>
+         </select>
+
+         <h1 class="font-medium-custom underline mt-8 mb-5">Current Product Offering</h1>
+         <label class="block text-[15px] required-field" for="current_products">What types of garments do you currently
+            offer?</label>
+         <div class="p-2 mt-1">
+            <label class="option-label">
+               <input type="checkbox" id="suits" name="current_products" value="Suits">
+               Suits
+            </label>
+            <label class="option-label">
+               <input type="checkbox" id="shirts" name="current_products" value="Shirts">
+               Shirts
+            </label>
+            <label class="option-label">
+               <input type="checkbox" id="casual_wear" name="current_products"
+                  value="Casual wear (Jeans, Polos, Chinos)">
+               Casual wear (Jeans, Polos, Chinos)
+            </label>
+            <label class="option-label">
+               <input type="checkbox" id="accessories" name="current_products"
+                  value="Accessories (Ties, Pocket Squares, etc.)">
+               Accessories (Ties, Pocket Squares, etc.)
+            </label>
+            <label class="option-label">
+               <input type="checkbox" id="shoes" name="current_products" value="Shoes & Leather Goods">
+               Shoes & Leather Goods
+            </label>
+            <label class="option-label">
+               <input type="checkbox" id="other" name="current_products" value="Other">
+               Other
+            </label>
+         </div>
+
+         <label class="block text-[15px] mt-4" for="average_order_quantity">What is your average order size per customer
+            in term of Product number per order?</label>
+         <div class="p-2 mt-1">
+            <label class="option-label">
+               <input type="radio" id="1-2" name="average_order_quantity" value="1-2" required>
+               1-2
+            </label>
+            <label class="option-label">
+               <input type="radio" id="3-5" name="average_order_quantity" value="3-5">
+               3-5
+            </label>
+            <label class="option-label">
+               <input type="radio" id="5+" name="average_order_quantity" value="5+">
+               5+
+            </label>
+         </div>
+
+         <label class="block text-[15px] mt-4" for="average_order_revenue">What is your average order size per customer
+            in term of revenue?</label>
+         <div class="p-2 mt-1">
+            <label class="option-label">
+               <input type="radio" id="500-800" name="average_order_revenue" value="Between 500 Euro and 800 Euro"
+                  required>
+               Between 500 Euro and 800 Euro
+            </label>
+            <label class="option-label">
+               <input type="radio" id="800-1000" name="average_order_revenue" value="Between 800 Euro and 1000 Euro">
+               Between 800 Euro and 1000 Euro
+            </label>
+            <label class="option-label">
+               <input type="radio" id="1000-1200" name="average_order_revenue" value="Between 1000 Euro and 1200 Euro">
+               Between 1000 Euro and 1200 Euro
+            </label>
+            <label class="option-label">
+               <input type="radio" id="1200+" name="average_order_revenue" value="More than 1200 euro">
+               More than 1200 euro
+            </label>
+         </div>
+
+         <label class="block text-[15px] mt-4" for="future_offering">What would you like to offer that you currently
+            don’t?</label>
+         <input class="bg-[#E8EFF5] w-full p-2 mt-1 focus:outline-none" type="text" id="future_offering"
+            name="future_offering">
+
+         <label class="block text-[15px] mt-4" for="supplier_count">How many supplier do you currently have?</label>
+         <div class="p-2 mt-1">
+            <label class="option-label">
+               <input type="radio" id="0" name="supplier_count" value="0" required>
+               0
+            </label>
+            <label class="option-label">
+               <input type="radio" id="1" name="supplier_count" value="1">
+               1
+            </label>
+            <label class="option-label">
+               <input type="radio" id="2" name="supplier_count" value="2">
+               2
+            </label>
+            <label class="option-label">
+               <input type="radio" id="3" name="supplier_count" value="3">
+               3
+            </label>
+            <label class="option-label">
+               <input type="radio" id="plus" name="supplier_count" value="Plus">
+               Plus
+            </label>
+         </div>
+
+         <label class="block text-[15px] mt-4" for="outsourcing_location">Where do you currently outsource your
+            confection?</label>
+         <input class="bg-[#E8EFF5] w-full p-2 mt-1 focus:outline-none" type="text" id="outsourcing_location"
+            name="outsourcing_location">
+
+         <h1 class="font-medium-custom underline mt-8 mb-5">Supply Chain & Pain Points</h1>
+         <label class="block text-[15px]" for="main_supplier_order_percent">What is the % of order that you give to your
+            main supplier?</label>
+         <input class="bg-[#E8EFF5] w-full p-2 mt-1 focus:outline-none" type="text" id="main_supplier_order_percent"
+            name="main_supplier_order_percent">
+
+         <label class="block text-[15px] mt-4" for="supplier_challenges">What are your biggest challenges with your
+            current suppliers?</label>
+         <div class="p-2 mt-1">
+            <label class="option-label">
+               <input type="checkbox" id="long_production_time" name="supplier_challenges" value="Long production time">
+               Long production time
+            </label>
+            <label class="option-label">
+               <input type="checkbox" id="limited_customization" name="supplier_challenges"
+                  value="Limited customization products">
+               Limited customization products
+            </label>
+            <label class="option-label">
+               <input type="checkbox" id="high_order_minimums" name="supplier_challenges" value="High order minimums">
+               High order minimums
+            </label>
+            <label class="option-label">
+               <input type="checkbox" id="quality_inconsistency" name="supplier_challenges"
+                  value="Quality inconsistency">
+               Quality inconsistency
+            </label>
+            <label class="option-label">
+               <input type="checkbox" id="lack_of_unique_designs" name="supplier_challenges"
+                  value="Lack of unique designs">
+               Lack of unique designs
+            </label>
+            <label class="option-label">
+               <input type="checkbox" id="price_increase" name="supplier_challenges" value="Price increase">
+               Price increase
+            </label>
+            <label class="option-label">
+               <input type="checkbox" id="lack_of_casual_product" name="supplier_challenges"
+                  value="Lack of casual product">
+               Lack of casual product
+            </label>
+            <label class="option-label">
+               <input type="checkbox" id="other_challenges" name="supplier_challenges" value="Other">
+               Other
+            </label>
+         </div>
+
+         <label class="block text-[15px] mt-4" for="losing_time_on_orders">Do you feel you are losing time when taking
+            orders?</label>
+         <div class="p-2 mt-1">
+            <label class="option-label">
+               <input type="radio" id="losing_time_yes" name="losing_time_on_orders" value="Yes" required>
+               Yes
+            </label>
+            <label class="option-label">
+               <input type="radio" id="losing_time_no" name="losing_time_on_orders" value="No">
+               No
+            </label>
+         </div>
+
+         <h1 class="font-medium-custom underline mt-8 mb-5">Interest in a New Supplier</h1>
+         <label class="block text-[15px]" for="issues_with_reordering">Do you experience issues with reordering?</label>
+         <div class="p-2 mt-1">
+            <label class="option-label">
+               <input type="radio" id="issues_yes" name="issues_with_reordering" value="Yes" required>
+               Yes
+            </label>
+            <label class="option-label">
+               <input type="radio" id="issues_no" name="issues_with_reordering" value="No">
+               No
+            </label>
+         </div>
+
+         <label class="block text-[15px] mt-4" for="interest_in_new_supplier">Are you open to exploring a supplier
+            offering:</label>
+         <div class="p-2 mt-1">
+            <label class="option-label">
+               <input type="checkbox" id="high_end_collection" name="interest_in_new_supplier"
+                  value="A high-end customizable collection with flexible order sizes">
+               A high-end customizable collection with flexible order sizes
+            </label>
+            <label class="option-label">
+               <input type="checkbox" id="faster_production" name="interest_in_new_supplier"
+                  value="Faster production timelines (e.g., 3 weeks for made-to-measure)">
+               Faster production timelines (e.g., 3 weeks for made-to-measure)
+            </label>
+            <label class="option-label">
+               <input type="checkbox" id="tailor_made_sizing" name="interest_in_new_supplier"
+                  value="Tailor-made sizing and simplified customization set">
+               Tailor-made sizing and simplified customization set
+            </label>
+            <label class="option-label">
+               <input type="checkbox" id="lightweight_inventory" name="interest_in_new_supplier"
+                  value="A lightweight inventory model to avoid overstock">
+               A lightweight inventory model to avoid overstock
+            </label>
+            <label class="option-label">
+               <input type="checkbox" id="exclusive_fabric" name="interest_in_new_supplier"
+                  value="Exclusive fabric collections and premium craftsmanship">
+               Exclusive fabric collections and premium craftsmanship
+            </label>
+         </div>
+
+         <label class="block text-[15px] mt-4" for="supplier_switch_factors">What factors would influence you to switch
+            or add a new supplier?</label>
+         <div class="p-2 mt-1">
+            <label class="option-label">
+               <input type="checkbox" id="quality" name="supplier_switch_factors" value="Quality" required>
+               Quality
+            </label>
+            <label class="option-label">
+               <input type="checkbox" id="price" name="supplier_switch_factors" value="Price">
+               Price
+            </label>
+            <label class="option-label">
+               <input type="checkbox" id="lead_time" name="supplier_switch_factors" value="Lead Time">
+               Lead Time
+            </label>
+            <label class="option-label">
+               <input type="checkbox" id="unique_design" name="supplier_switch_factors" value="Unique Design">
+               Unique Design
+            </label>
+            <label class="option-label">
+               <input type="checkbox" id="other_factors" name="supplier_switch_factors" value="Other">
+               Other
+            </label>
+         </div>
+
+         <label class="block text-[15px] mt-4" for="interest_in_demo">Would you be interested in discovering our
+            offering to evaluate all our benefits?</label>
+         <div class="p-2 mt-1">
+            <label class="option-label">
+               <input type="radio" id="demo_yes" name="interest_in_demo" value="Yes" required>
+               Yes
+            </label>
+            <label class="option-label">
+               <input type="radio" id="demo_no" name="interest_in_demo" value="No">
+               No
+            </label>
+         </div>
+
+         <label class="block text-[15px] mt-4" for="preferred_contact_method">How do you want to talk?</label>
+         <div class="p-2 mt-1">
+            <label class="option-label">
+               <input type="radio" id="phone_call" name="preferred_contact_method" value="Phone call" required>
+               Phone call
+            </label>
+            <label class="option-label">
+               <input type="radio" id="online_meeting" name="preferred_contact_method" value="Online meeting">
+               Online meeting
+            </label>
+            <label class="option-label">
+               <input type="radio" id="face_to_face" name="preferred_contact_method" value="Face to face meeting">
+               Face to face meeting
+            </label>
+         </div>
+
+         <label class="block text-[15px] mt-4" for="contact_details">Leave us your Whatsapp, your phone number and your
+            email. We will contact you soon. Thanks a lot for your time</label>
+         <input class="bg-[#E8EFF5] w-full p-2 mt-1 focus:outline-none" type="text" id="contact_details"
+            name="contact_details" required>
+
+         <button type="submit" class="mt-6 bg-blue-500 text-white p-2 rounded">Submit</button>
+      </form>
+   </section>
+
+
+
+   <!-- footer -->
+   <footer class="w-full h-[75px] border-t">
+      <div class="myContainer w-full h-full flex items-center justify-between flex-wrap">
+         <div class="text-left md:flex block">
+            <p class="text-[16px] md:text-[12px] my-5 md:my-0">© 2014 Atelier Fusari, all right reserved</p>
+            <a class="md:ml-10 ml-0 text-[16px] md:text-[12px] underline text-left "
+               href="https://www.fusaripro.com/privacy-policy">Privacy Policy</a>
+         </div>
+
+         <div class="pb-20 md:pb-0 mt-5 lg:mt-0">
+            <a href="/" class="logo-container">
+               <img class="w-[210px] logo-default" src="./images/logo.avif" alt="">
+            </a>
+         </div>
+      </div>
+   </footer>
+
+   <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+[
+
+   // Business Overview
+   {
+      "name": "store_name",
+      "label": "What is the name of your tailor store?",
+      "type": "text",
+      "required": true
+   },
+   {
+      "name": "store_location",
+      "label": "Where is your store located?",
+      "type": "text",
+      "required": true
+   },
+   {
+      "name": "email",
+      "label": "Enter an email address like example@mysite.com.",
+      "type": "email",
+      "required": true
+   },
+   {
+      "name": "specialization",
+      "label": "Do you specialize in any particular type of tailoring?",
+      "type": "text",
+      "required": true
+   },
+   {
+      "name": "target_clientele",
+      "label": "Who is your target clientele?",
+      "type": "select",
+      "required": true,
+      "options": [
+         "Bespoke",
+         "Made to measure",
+         "Ready to wear",
+         "Mix"
+      ]
+   },
+   // Current Product Offering
+   {
+      "name": "current_products",
+      "label": "What types of garments do you currently offer?",
+      "type": "checkbox",
+      "required": true,
+      "options": [
+         "Suits",
+         "Shirts",
+         "Casual wear (Jeans, Polos, Chinos)",
+         "Accessories (Ties, Pocket Squares, etc.)",
+         "Shoes & Leather Goods",
+         "Other"
+      ]
+   },
+   {
+      "name": "average_order_quantity",
+      "label": "What is your average order size per customer in term of Product number per order?",
+      "type": "radio",
+      "required": true,
+      "options": [
+         "1-2",
+         "3-5",
+         "5+"
+      ]
+   },
+   {
+      "name": "average_order_revenue",
+      "label": "What is your average order size per customer in term of revenue?",
+      "type": "radio",
+      "required": true,
+      "options": [
+         "Between 500 Euro and 800 Euro",
+         "Between 800 Euro and 1000 Euro",
+         "Between 1000 Euro and 1200 Euro",
+         "More than 1200 euro"
+      ]
+   },
+   {
+      "name": "future_offering",
+      "label": "What would you like to offer that you currently don’t?",
+      "type": "text",
+      "required": false
+   },
+   {
+      "name": "supplier_count",
+      "label": "How many supplier do you currently have?",
+      "type": "radio",
+      "required": true,
+      "options": [
+         "0",
+         "1",
+         "2",
+         "3",
+         "Plus"
+      ]
+   },
+   {
+      "name": "outsourcing_location",
+      "label": "Where do you currently outsource your confection?",
+      "type": "text",
+      "required": false
+   },
+   // Supply Chain & Pain Points
+   {
+      "name": "main_supplier_order_percent",
+      "label": "What is the % of order that you give to your main supplier?",
+      "type": "text",
+      "required": false
+   },
+   {
+      "name": "supplier_challenges",
+      "label": "What are your biggest challenges with your current suppliers?",
+      "type": "checkbox",
+      "required": false,
+      "options": [
+         "Long production time",
+         "Limited customization products",
+         "High order minimums",
+         "Quality inconsistency",
+         "Lack of unique designs",
+         "Price increase",
+         "Lack of casual product",
+         "Other"
+      ]
+   },
+   {
+      "name": "losing_time_on_orders",
+      "label": "Do you feel you are losing time when taking orders?",
+      "type": "radio",
+      "required": true,
+      "options": [
+         "Yes",
+         "No"
+      ]
+   },
+   // Interest in a New Supplier
+   {
+      "name": "issues_with_reordering",
+      "label": "Do you experience issues with reordering?",
+      "type": "radio",
+      "required": true,
+      "options": [
+         "Yes",
+         "No"
+      ]
+   },
+   {
+      "name": "interest_in_new_supplier",
+      "label": "Are you open to exploring a supplier offering:",
+      "type": "checkbox",
+      "required": false,
+      "options": [
+         "A high-end customizable collection with flexible order sizes",
+         "Faster production timelines (e.g., 3 weeks for made-to-measure)",
+         "Tailor-made sizing and simplified customization set",
+         "A lightweight inventory model to avoid overstock",
+         "Exclusive fabric collections and premium craftsmanship"
+      ]
+   },
+   {
+      "name": "supplier_switch_factors",
+      "label": "What factors would influence you to switch or add a new supplier?",
+      "type": "checkbox",
+      "required": true,
+      "options": [
+         "Quality",
+         "Price",
+         "Lead Time",
+         "Unique Design",
+         "Other"
+      ]
+   },
+   {
+      "name": "interest_in_demo",
+      "label": "Would you be interested in discovering our offering to evaluate all our benefits?",
+      "type": "radio",
+      "required": true,
+      "options": [
+         "Yes",
+         "No"
+      ]
+   },
+   {
+      "name": "preferred_contact_method",
+      "label": "How do you want to talk?",
+      "type": "radio",
+      "required": true,
+      "options": [
+         "Phone call",
+         "Online meeting",
+         "Face to face meeting"
+      ]
+   },
+   {
+      "name": "contact_details",
+      "label": "Leave us your Whatsapp, your phone number and your email. We will contact you soon. Thanks a lot for your time",
+      "type": "text",
+      "required": true
+   }
+]
