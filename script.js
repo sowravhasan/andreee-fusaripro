@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Show default logo initially
       defaultLogo.style.display = 'block';
       hoverLogo.style.display = 'none';
-      
+
       // Handle hover events
       logoContainer.addEventListener('mouseenter', () => {
          defaultLogo.style.display = 'none';
@@ -195,26 +195,70 @@ document.addEventListener('DOMContentLoaded', () => {
    }
 });
 
-// Language Selector
-document.addEventListener('DOMContentLoaded', function() {
-    const languageSelector = document.querySelector('.language-selector');
-    const languageDropdown = document.querySelector('.language-dropdown');
-    
-    // Toggle dropdown on click
-    languageSelector?.addEventListener('click', function(e) {
-        e.stopPropagation();
-        languageDropdown.classList.toggle('hidden');
-    });
+// Simple Language Switcher
+function toggleLanguageDropdown() {
+   const dropdown = document.querySelector('.language-dropdown');
+   dropdown.classList.toggle('hidden');
+}
 
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function() {
-        if (!languageDropdown?.classList.contains('hidden')) {
-            languageDropdown.classList.add('hidden');
-        }
-    });
+function toggleMobileLanguageDropdown() {
+   const dropdown = document.querySelector('.language-dropdown-mobile');
+   dropdown.classList.toggle('hidden');
+}
 
-    // Prevent dropdown from closing when clicking inside it
-    languageDropdown?.addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
+function googleTranslateElementInit() {
+   new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,fr,it,ru',
+      autoDisplay: false
+   }, 'google_translate_element');
+}
+
+
+// Optional: Set selected language from cookie
+document.addEventListener('DOMContentLoaded', () => {
+   const selectedLanguage = document.getElementById('selected-language');
+   const cookie = document.cookie.match(/googtrans=\/auto\/(\w+)/);
+   const langCode = cookie ? cookie[1].toUpperCase() : 'EN';
+   if (selectedLanguage) selectedLanguage.textContent = langCode;
 });
+
+
+function changeLanguage(langCode, langDisplay) {
+   // Set selected text
+   const selectedLanguage = document.getElementById('selected-language');
+   if (selectedLanguage) selectedLanguage.textContent = langDisplay;
+
+   // Hide dropdown
+   const dropdown = document.querySelector('.language-dropdown');
+   if (dropdown) dropdown.classList.add('hidden');
+
+   // Set cookie to change language
+   document.cookie = `googtrans=/auto/${langCode};path=/`;
+   document.cookie = `googtrans=/auto/${langCode};domain=${window.location.hostname};path=/`;
+
+   // Reload page to apply
+   location.reload();
+}
+
+function toggleLanguageDropdown() {
+   const dropdown = document.querySelector('.language-dropdown');
+   if (dropdown) dropdown.classList.toggle('hidden');
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function (event) {
+   const dropdown = document.querySelector('.language-dropdown');
+   const mobileDropdown = document.querySelector('.language-dropdown-mobile');
+   const languageSelector = document.querySelector('.language-selector');
+   const mobileLanguageContainer = event.target.closest('.md\\:hidden');
+
+   if (dropdown && !languageSelector?.contains(event.target)) {
+      dropdown.classList.add('hidden');
+   }
+
+   if (mobileDropdown && !mobileLanguageContainer?.contains(event.target)) {
+      mobileDropdown.classList.add('hidden');
+   }
+});
+

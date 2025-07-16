@@ -1,27 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @font-face {
    font-family: 'FuturaStdLight';
    src: url('/font/FuturaStdLight.otf') format('opentype');
 
-   /* Light */
-   font-style: normal;
 }
 
 @font-face {
    font-family: 'FuturaStdMedium';
    src: url('/font/FuturaStdMedium.otf') format('opentype');
- 
-   /* Medium */
-   font-style: normal;
+
 }
 
 /* Optional: if you have bold */
 @font-face {
    font-family: 'FuturaStd';
    src: url('/font/FuturaStdBold.otf') format('opentype');
- 
-   /* Bold */
-   font-style: normal;
 }
+
+/* Hide Google Translate top bar */
+body > .skiptranslate {
+   display: none !important;
+ }
+ body {
+   top: 0px !important;
+ }
 
 h1,
 h2,
@@ -31,13 +33,19 @@ h5,
 h6 {
    font-family: 'FuturaStdMedium';
 }
+
 .font-medium-custom {
    font-weight: 500 !important;
    font-family: 'FuturaStdMedium' !important;
 }
+
 .font-normal-custom {
    font-weight: 400 !important;
    font-family: 'FuturaStdLight' !important;
+}
+.font-bold-custom {
+   font-weight: 700 !important;
+   font-family: 'FuturaStd' !important;
 }
 p,
 span,
@@ -45,7 +53,7 @@ button,
 input,
 textarea,
 label {
-   font-family: 'FuturaStdLight';
+   font-family: "Nunito Sans", sans-serif;
 }
 
 .myContainer {
@@ -67,7 +75,7 @@ label {
 
 @media (min-width: 1024px) {
    .swiper {
-      height: 80vh;
+      height: 90vh;
    }
 }
 
@@ -75,13 +83,16 @@ label {
 .swiper-button-prev {
    color: #ffffff !important;
 }
+.blackColor {
+   color: black !important;
+}
 
 .swiper-button-next {
-   right: 80px !important;
+   right: 100px !important;
 }
 
 .swiper-button-prev {
-   left: 80px !important;
+   left: 100px !important;
 }
 
 .swiper-pagination-bullet-active {
@@ -92,7 +103,7 @@ label {
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
-   bottom: 50px !important;
+   bottom: 60px !important;
 }
 
 .swiper-slide::before {

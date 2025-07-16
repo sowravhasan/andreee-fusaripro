@@ -9,6 +9,18 @@
       fusaripro.com</title>
    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
    <link rel="stylesheet" href="style.css">
+   <script type="text/javascript">
+      function googleTranslateElementInit() {
+         new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,fr,it,ru',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+         }, 'google_translate_element');
+      }
+   </script>
+
+   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+   </script>
 </head>
 
 <body>
@@ -42,22 +54,34 @@
          </div>
 
          <!-- Language Selector - Hidden on Mobile -->
+         <!-- Your Custom Language Switcher -->
          <div class="relative">
+            <div id="google_translate_element" style="display: none;"></div>
+
             <div
-               class="hidden md:flex items-center space-x-1 border border-gray-300 px-3 py-1 hover:bg-gray-50 cursor-pointer language-selector">
-               <span class="text-base font-medium text-gray-800">EN</span>
+               class="hidden md:flex items-center space-x-1 border border-gray-300 px-3 py-1 hover:bg-gray-50 cursor-pointer language-selector"
+               onclick="toggleLanguageDropdown()">
+               <span class="text-base font-medium text-gray-800" id="selected-language">EN</span>
                <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                </svg>
             </div>
+
             <div
-               class="language-dropdown hidden absolute top-full right-0 mt-1 w-20 bg-white border border-gray-200 rounded shadow-lg">
-               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">EN</a>
-               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">FR</a>
-               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">IT</a>
-               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">RU</a>
+               class="language-dropdown hidden absolute top-full right-0 mt-1 w-20 bg-white border border-gray-200 rounded shadow-lg z-50">
+               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                  onclick="changeLanguage('en', 'EN'); return false;">EN</a>
+               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                  onclick="changeLanguage('fr', 'FR'); return false;">FR</a>
+               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                  onclick="changeLanguage('it', 'IT'); return false;">IT</a>
+               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                  onclick="changeLanguage('ru', 'RU'); return false;">RU</a>
             </div>
          </div>
+
+         <!-- Google Translate Script -->
+         <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
       </div>
    </nav>
 
@@ -74,11 +98,25 @@
             </button>
 
             <!-- Language Selector - Shown only on Mobile -->
-            <div class="md:hidden flex items-center space-x-1 border border-gray-300 px-3 py-1">
-               <span class="text-base font-medium text-gray-800">EN</span>
-               <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-               </svg>
+            <div class="md:hidden relative">
+               <div class="flex items-center space-x-1 border border-gray-300 px-3 py-1 cursor-pointer"
+                  onclick="toggleMobileLanguageDropdown()">
+                  <span class="text-base font-medium text-gray-800" id="selected-language-mobile">EN</span>
+                  <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+               </div>
+               <div
+                  class="language-dropdown-mobile hidden absolute top-full right-0 mt-1 w-20 bg-white border border-gray-200 rounded shadow-lg z-50">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                     onclick="changeLanguage('en', 'EN'); return false;">EN</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                     onclick="changeLanguage('fr', 'FR'); return false;">FR</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                     onclick="changeLanguage('it', 'IT'); return false;">IT</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                     onclick="changeLanguage('ru', 'RU'); return false;">RU</a>
+               </div>
             </div>
          </div>
 
@@ -110,7 +148,7 @@
                      class="w-full h-[40vh] md:h-[60vh] lg:h-[80vh] object-cover">
                   <div class="absolute inset-0 flex items-center justify-center z-10 pt-20">
                      <div
-                        class="text-center px-4 bg-[#ffffffb5] px-3 py-4 lg:py-6 lg:px-20 mt-[450px] lg:mt-20 text-black">
+                        class="text-center px-4 bg-[#ffffffb5] px-3 py-4 lg:py-6 lg:px-20 mt-[450px] md:mt-[250px] 2xl:mt-20 text-black">
                         <h2 class="text-2xl md:text-[36px] leading-tight">
                            TOTAL LOOK SUPPLIER: White labels/OEM partner <br>
                            for brands & tailor stores
@@ -123,7 +161,7 @@
                      class="w-full h-[40vh] md:h-[60vh] lg:h-[80vh] object-cover">
                   <div class="absolute inset-0 flex items-center justify-center z-10 pt-20">
                      <div
-                        class="text-center px-4 bg-[#ffffffb5] px-3 py-4 lg:py-6 lg:px-20 mt-[450px] lg:mt-20 text-black">
+                        class="text-center px-4 bg-[#ffffffb5] px-3 py-4 lg:py-6 lg:px-20 mt-[450px] md:mt-[250px] 2xl:mt-20 text-black">
                         <h2 class="text-2xl md:text-[36px] leading-tight">
                            FASTER DELIVERY: Receive your customized <br>
                            order in just 2-3 weeks
@@ -136,7 +174,7 @@
                      class="w-full h-[40vh] md:h-[60vh] lg:h-[80vh] object-cover">
                   <div class="absolute inset-0 flex items-center justify-center z-10 pt-20">
                      <div
-                        class="text-center px-4 bg-[#ffffffb5] px-3 py-4 lg:py-6 lg:px-20 mt-[450px] lg:mt-20 text-black">
+                        class="text-center px-4 bg-[#ffffffb5] px-3 py-4 lg:py-6 lg:px-20 mt-[450px] md:mt-[250px] 2xl:mt-20 text-black">
                         <h2 class="text-2xl md:text-[36px] leading-tight">
                            SUPERIOR CRAFTS: Premium quality at <br>
                            a more affordable cost price
@@ -149,7 +187,7 @@
                      class="w-full h-[40vh] md:h-[60vh] lg:h-[80vh] object-cover">
                   <div class="absolute inset-0 flex items-center justify-center z-10 pt-20">
                      <div
-                        class="text-center px-4 bg-[#ffffffb5] px-3 py-4 lg:py-6 lg:px-20 mt-[450px] lg:mt-20 text-black">
+                        class="text-center px-4 bg-[#ffffffb5] px-3 py-4 lg:py-6 lg:px-20 mt-[450px] md:mt-[250px] 2xl:mt-20 text-black">
                         <h2 class="text-2xl md:text-[36px] leading-tight">
                            EXTENSIVE SELECTION: A vast products collection <br>
                            and seasonal trends
@@ -162,7 +200,7 @@
                      class="w-full h-[40vh] md:h-[60vh] lg:h-[80vh] object-cover">
                   <div class="absolute inset-0 flex items-center justify-center z-10 pt-20">
                      <div
-                        class="text-center px-4 bg-[#ffffffb5] px-3 py-4 lg:py-6 lg:px-20 mt-[450px] lg:mt-20 text-black">
+                        class="text-center px-4 bg-[#ffffffb5] px-3 py-4 lg:py-6 lg:px-20 mt-[450px] md:mt-[250px] 2xl:mt-20 text-black">
                         <h2 class="text-2xl md:text-[36px] leading-tight">
                            ONE SYSTEM: A Simplified Customized app for you, <br>
                            to order all our products in one place
@@ -226,7 +264,7 @@
 
                <p class="section-text text-gray-700">
                   We manage an extensive network of over 20 top manufacturers, each
-                  excelling in 10 areas of expertise for <span class="font-medium">A TOTAL LOOKS SUPPLIER</span>:
+                  excelling in 10 areas of expertise for <span class="font-bold">A TOTAL LOOKS SUPPLIER</span>:
                   Suiting, Casual-wear, Outwear, Cashmere sweaters, Shirting, Jeans &
                   Chinos, Sneakers, Leather shoes, Leathers bag, Accesories
                </p>
@@ -481,8 +519,8 @@
                   </div>
                </div>
                <!-- Navigation buttons -->
-               <div class="swiper-button-next"></div>
-               <div class="swiper-button-prev"></div>
+               <div class="swiper-button-next blackColor"></div>
+               <div class="swiper-button-prev blackColor"></div>
 
                <!-- Pagination -->
                <div class="swiper-pagination"></div>
