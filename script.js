@@ -217,33 +217,46 @@ function googleTranslateElementInit() {
 
 // Optional: Set selected language from cookie
 document.addEventListener('DOMContentLoaded', () => {
-   const selectedLanguage = document.getElementById('selected-language');
-   const cookie = document.cookie.match(/googtrans=\/auto\/(\w+)/);
-   const langCode = cookie ? cookie[1].toUpperCase() : 'EN';
-   if (selectedLanguage) selectedLanguage.textContent = langCode;
+    const selectedLanguage = document.getElementById('selected-language');
+    const selectedLanguageMobile = document.getElementById('selected-language-mobile');
+    const langCode = localStorage.getItem('language') || 'EN';
+    let text = "EN"
+    if (langCode === 'fr') text = "FR"  
+    if (langCode === 'it') text = "IT"
+    if (langCode === 'ru') text = "RU"
+    if (selectedLanguage) selectedLanguage.textContent = text;
+    if (selectedLanguageMobile) selectedLanguageMobile.textContent = text;
+    
+    // Hide current language from both dropdowns
+    document.querySelectorAll('.language-dropdown a, .language-dropdown-mobile a').forEach(link => {
+        if (link.id === langCode.toLowerCase()) {
+            link.classList.add('hidden');
+        } else {
+            link.classList.remove('hidden');
+        }
+    });
 });
 
-
 function changeLanguage(langCode, langDisplay) {
-   // Set selected text
-   const selectedLanguage = document.getElementById('selected-language');
-   if (selectedLanguage) selectedLanguage.textContent = langDisplay;
+    localStorage.setItem('language', langCode);
+    // Set selected text
+    const selectedLanguage = document.getElementById('selected-language');
+    const selectedLanguageMobile = document.getElementById('selected-language-mobile');
+    if (selectedLanguage) selectedLanguage.textContent = langDisplay;
+    if (selectedLanguageMobile) selectedLanguageMobile.textContent = langDisplay;
 
-   // Hide dropdown
-   const dropdown = document.querySelector('.language-dropdown');
-   if (dropdown) dropdown.classList.add('hidden');
+    // Hide dropdowns
+    const dropdown = document.querySelector('.language-dropdown');
+    const mobileDropdown = document.querySelector('.language-dropdown-mobile');
+    if (dropdown) dropdown.classList.add('hidden');
+    if (mobileDropdown) mobileDropdown.classList.add('hidden');
 
-   // Set cookie to change language
-   document.cookie = `googtrans=/auto/${langCode};path=/`;
-   document.cookie = `googtrans=/auto/${langCode};domain=${window.location.hostname};path=/`;
+    // Set cookie to change language
+    document.cookie = `googtrans=/auto/${langCode};path=/`;
+    document.cookie = `googtrans=/auto/${langCode};domain=${window.location.hostname};path=/`;
 
-   // Reload page to apply
-   location.reload();
-}
-
-function toggleLanguageDropdown() {
-   const dropdown = document.querySelector('.language-dropdown');
-   if (dropdown) dropdown.classList.toggle('hidden');
+    // Reload page to apply
+    location.reload();
 }
 
 // Close dropdowns when clicking outside

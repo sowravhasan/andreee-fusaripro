@@ -57,7 +57,7 @@ label {
 }
 
 .myContainer {
-   max-width: 1000px;
+   max-width: 1050px;
    margin: 0 auto;
    padding: 0 1rem;
 }
@@ -85,6 +85,7 @@ label {
 }
 .blackColor {
    color: black !important;
+   font-size: 20px !important;
 }
 
 .swiper-button-next {
@@ -94,6 +95,7 @@ label {
 .swiper-button-prev {
    left: 100px !important;
 }
+
 
 .swiper-pagination-bullet-active {
    background: #ffffff !important;
