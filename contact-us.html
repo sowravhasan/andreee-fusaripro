@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,7 +8,18 @@
    <title>Contact Us</title>
    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
    <link rel="stylesheet" href="style.css">
+   <script type="text/javascript">
+      function googleTranslateElementInit() {
+         new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,fr,it,ru',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+         }, 'google_translate_element');
+      }
+   </script>
 
+   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+   </script>
 </head>
 
 <body>
@@ -42,19 +54,34 @@
 
          <!-- Language Selector - Hidden on Mobile -->
          <div class="relative">
-            <div class="hidden md:flex items-center space-x-1 border border-gray-300 px-3 py-1 hover:bg-gray-50 cursor-pointer language-selector">
-               <span class="text-base font-medium text-gray-800">EN</span>
+            <div id="google_translate_element" style="display: none;"></div>
+
+            <div
+               class="hidden md:flex items-center space-x-1 border border-gray-300 px-3 py-1 hover:bg-gray-50 cursor-pointer language-selector"
+               onclick="toggleLanguageDropdown()">
+               <span class="notranslate text-base font-medium text-gray-800" id="selected-language">
+                  <div class="w-[18px] h-[22px]"></div>
+               </span>
                <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                </svg>
             </div>
-            <div class="language-dropdown hidden absolute top-full right-0 mt-1 w-20 bg-white border border-gray-200 rounded shadow-lg">
-               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">EN</a>
-               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">FR</a>
-               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">IT</a>
-               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">RU</a>
+
+            <div
+               class="language-dropdown hidden absolute top-full right-0 mt-1 w-20 bg-white border border-gray-200 rounded shadow-lg z-50">
+               <a id="en" href="#" class="notranslate block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                  onclick="changeLanguage('en', 'EN'); return false;">EN</a>
+               <a id="fr" href="#" class="notranslate block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                  onclick="changeLanguage('fr', 'FR'); return false;">FR</a>
+               <a id="it" href="#" class="notranslate block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                  onclick="changeLanguage('it', 'IT'); return false;">IT</a>
+               <a id="ru" href="#" class="notranslate block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                  onclick="changeLanguage('ru', 'RU'); return false;">RU</a>
             </div>
          </div>
+
+         <!-- Google Translate Script -->
+         <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
       </div>
    </nav>
 
@@ -71,11 +98,27 @@
             </button>
 
             <!-- Language Selector - Shown only on Mobile -->
-            <div class="md:hidden flex items-center space-x-1 border border-gray-300 px-3 py-1">
-               <span class="text-base font-medium text-gray-800">EN</span>
-               <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-               </svg>
+            <div class="md:hidden relative">
+               <div class="flex items-center space-x-1 border border-gray-300 px-3 py-1 cursor-pointer"
+                  onclick="toggleMobileLanguageDropdown()">
+                  <span class="notranslate text-base font-medium text-gray-800" id="selected-language-mobile">
+                     <div class="w-[18px] h-[22px]"></div>
+                  </span>
+                  <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+               </div>
+               <div
+                  class="language-dropdown-mobile hidden absolute top-full right-0 mt-1 w-20 bg-white border border-gray-200 rounded shadow-lg z-50">
+                  <a id="en" href="#" class="notranslate block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                     onclick="changeLanguage('en', 'EN'); return false;">EN</a>
+                  <a id="fr" href="#" class="notranslate block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                     onclick="changeLanguage('fr', 'FR'); return false;">FR</a>
+                  <a id="it" href="#" class="notranslate block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                     onclick="changeLanguage('it', 'IT'); return false;">IT</a>
+                  <a id="ru" href="#" class="notranslate block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                     onclick="changeLanguage('ru', 'RU'); return false;">RU</a>
+               </div>
             </div>
          </div>
 
