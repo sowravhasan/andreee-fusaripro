@@ -145,21 +145,21 @@ label {
 }
 
 .about-hero {
-   background-image: url('/images/hero about.avif');
+   background-image: url('./images/hero about.avif');
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
 }
 
 .our-products-hero {
-   background-image: url('/images/product/product-header.avif');
+   background-image: url('./images/product/product-header.avif');
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
 }
 
 .contact-us-hero {
-   background-image: url('/images/contact-header.avif');
+   background-image: url('./images/contact-header.avif');
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
@@ -231,7 +231,7 @@ nav {
 }
 
 .formBg {
-   background-image: url('/images/form.avif');
+   background-image: url('./images/form.avif');
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
